@@ -17,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/absensi', [App\Http\Controllers\Backend\Page\Absensi\AbsensiController::class, 'absensi_json']);
+Route::post('/absensi', [App\Http\Controllers\Backend\Page\Absensi\AbsensiController::class, 'absensi']);
