@@ -29,4 +29,11 @@ class AbsensiController extends Controller
             ]
         ]);
     }
+    public function reset_absensi()
+    {
+        Absensi::truncate();
+        return response()->json([
+            'success' => 'berhasil melakukan reset'
+        ]);
+    }
 }
