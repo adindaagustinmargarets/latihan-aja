@@ -20,3 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/absensi', [App\Http\Controllers\Backend\Page\Absensi\AbsensiController::class, 'absensi_json']);
 Route::post('/absensi', [App\Http\Controllers\Backend\Page\Absensi\AbsensiController::class, 'absensi']);
 Route::delete('/absensi/reset', [App\Http\Controllers\Backend\Page\Absensi\AbsensiController::class, 'reset_absensi']);
+
+Route::post('/login', [App\Http\Controllers\Backend\Api\Auth\LoginController::class, 'login']);
+Route::post('/register', [App\Http\Controllers\Backend\Api\Auth\RegisterController::class, 'register']);
