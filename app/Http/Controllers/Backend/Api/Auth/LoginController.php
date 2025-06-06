@@ -20,13 +20,11 @@ class LoginController extends Controller
         }
         $user = Auth::user();
         return response()->json([
-            'message' => 'Berhasil Login Mengunakan Api',
             'user' => [
                 'id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email,
             ],
-            'api_key' => $user->api_key,
         ], 201);
     }
 }
