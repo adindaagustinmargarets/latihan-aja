@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             'name' => 'Akun Demo',
             'email' => 'demo@demo.com',
             'password' => Hash::make('demo'),
+            'level' => 'Admin',
             'api_key' => bin2hex(random_bytes(32))
         ]);
     }

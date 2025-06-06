@@ -12,3 +12,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::group(['prefix' => '', 'middleware' => ['auth']], function () {
+    Route::get('/dashboard', [App\Http\Controllers\Backend\Page\DashbaordController::class, 'dashboard']);
+});
+Route::group(['prefix' => 'backend/admin', 'middleware' => ['admin']], function () {
+    Route::get('/absensi', [App\Http\Controllers\Backend\Page\Admin\AbsensiController::class, 'index']);
+    Route::post('/absensi/tambah', [App\Http\Controllers\Backend\Page\Admin\AbsensiController::class, 'tambah'])->name('backend.absensi.tambah');
+    Route::delete('/absensi/hapus/{id}', [App\Http\Controllers\Backend\Page\Admin\AbsensiController::class, 'hapus'])->name('backend.absensi.hapus');
+});
