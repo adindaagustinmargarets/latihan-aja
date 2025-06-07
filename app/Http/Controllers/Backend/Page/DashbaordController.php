@@ -9,8 +9,6 @@ class DashbaordController extends Controller
 {
     public function dashboard()
     {
-        return response()->json([
-            'status' => 'Halaman Dashbaord'
-        ]);
+        return view('backend.dashboard');
     }
 }
